@@ -1,0 +1,33 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+¡Acá podrás crear tu pizza para el
+Concurso de pizzas 2024!
+
+{% endblock %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Estamos buscando pizzas creadas del siguiente tamaño: {{tamaño}}</p>
+
+    {% for resultado in resultados %}
+
+        <p> Tamaño: {{resultado.tamaño}} --- Creador: {{resultado.nombre}} - Masa: {{resultado.masa}} - Ingrediente 1: {{resultado.ingrediente1}}
+            - Ingrediente 2: {{resultado.ingrediente2}} - Ingrediente 3: {{resultado.ingrediente3}} - Ingrediente 4: {{resultado.ingrediente4}}
+        </p>
+
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

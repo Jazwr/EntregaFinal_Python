@@ -1,0 +1,46 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+A continuación se muestran todas las pizzas creadas
+
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for pizza in object_list %}
+    <p>Nombre:{{pizza.nombre}}</p>
+    <p>Tamaño:{{pizza.tamaño}}</p>
+    <p>Masa:{{pizza.masa}}</p>
+    <p>Ingrediente1:{{pizza.ingrediente1}}</p>
+    <p>Ingrediente2:{{pizza.ingrediente2}}</p>
+    <p>Ingrediente3:{{pizza.ingrediente3}}</p>
+    <p>Ingrediente4:{{pizza.ingrediente4}}</p>
+    
+
+    <a href="{% url 'PizzaDetalle' pizza.id %}"> Ver Pizza </a>
+    <a href="{% url 'PizzaEditar' pizza.id %}"> Editar Pizza </a>
+    <a href="{% url 'PizzaBorrar' pizza.id %}"> Eliminar Pizza </a>
+    
+    ##################################
+    {% endfor %}
+
+    <br>
+    <a href="{% url 'PizzaCrear' %}"> Crear pizza </a>
+
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+Acá podemos iniciar sesión
+
+{% endblock %}
+
+{% block content %}
+                    
+
+<form action="" method="POST"> {% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <button type="submit"> Iniciar Sesión </button>
+
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+¡Consulta la últimas creaciones del
+Concurso de pizzas 2024!
+
+{% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar pizzas</title>
+</head>
+<body>
+    <h1>Buscamos las pizzas creadas según el tamaño:</h1>
+    <form action="/AppPizzas/resultados/" method="GET"> {% csrf_token %}
+
+       Ingrese el tamaño de la Pizza: <input type="text" name="tamaño" id="tamaño" >
+        <input type="submit" value="Buscar">
+    </form>
+    {%for x in resultados %}
+
+    <p> {{x.nombre}}</p>
+
+    {% endfor %}
+
+
+</body>
+</html>
+
+{% endblock %}

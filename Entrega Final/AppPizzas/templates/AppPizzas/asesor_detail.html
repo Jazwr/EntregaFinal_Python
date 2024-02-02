@@ -1,0 +1,29 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+Estos son los datos de tu asesor
+
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nombre:{{asesor.nombre}}</p>
+    <p>Cod_Asesor:{{asesor.cod_ases}}</p>
+    <p>Correo:{{asesor.correo}}</p>
+
+    <a href="{% url 'AsesorLeer' %}"> Regresar </a>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+Este es el detalle de la pizza seleccionada
+
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nombre:{{pizza.nombre}}</p>
+    <p>Tamaño:{{pizza.tamaño}}</p>
+    <p>Masa:{{pizza.masa}}</p>
+    <p>Ingrediente1:{{pizza.ingrediente1}}</p>
+    <p>Ingrediente2:{{pizza.ingrediente2}}</p>
+    <p>Ingrediente3:{{pizza.ingrediente3}}</p>
+    <p>Ingrediente4:{{pizza.ingrediente4}}</p>
+
+    <a href="{% url 'PizzaLeer' %}"> Regresar </a>
+</body>
+</html>
+{% endblock %}

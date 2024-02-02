@@ -1,0 +1,40 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+A continuación se muestran a todos los asesores
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for asesor in object_list %}
+    <p>Nombre:{{asesor.nombre}}</p>
+    <p>Cod_Asesor:{{asesor.cod_ases}}</p>
+    <p>Correo:{{asesor.correo}}</p>
+
+    <a href="{% url 'AsesorDetalle' asesor.id %}"> Ver Asesor </a>
+    <a href="{% url 'AsesorEditar' asesor.id %}"> Editar Asesor </a>
+    <a href="{% url 'AsesorBorrar' asesor.id %}"> Eliminar Asesor </a>
+    
+    ##################################
+    {% endfor %}
+
+    <br>
+    <a href="{% url 'AsesorCrear' %}"> Crear Asesor </a>
+
+
+</body>
+</html>
+
+{% endblock %}

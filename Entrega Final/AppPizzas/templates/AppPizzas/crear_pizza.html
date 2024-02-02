@@ -1,0 +1,38 @@
+
+"""""
+
+{% extends "AppPizzas/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+¡Es hora de crear tu propia pizza!
+
+{% endblock %}
+
+
+"""""
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/AppPizzas/crear_pizza/" method="POST"> {% csrf_token %}
+
+        <p> Nombre: <input type="text" name="nombre" id="nombre" ></p>
+        <p> Tamaño: <input type="text" name="tamaño" id="tamaño" ></p>
+        <p> Masa: <input type="text" name="masa" id="masa" ></p>
+        <p> Ingrediente 1: <input type="text" name="ingredient1" id="ingredient1" ></p>
+        <p> Ingrediente 2: <input type="text" name="ingredient2" id="ingredient2" ></p>
+        <p> Ingrediente 3: <input type="text" name="ingredient3" id="ingredient3" ></p>
+        <p> Ingrediente 4: <input type="text" name="ingredient4" id="ingredient4" ></p>
+        <input type="submit" value="Guardar">
+    </form>
+
+</body>
+</html>

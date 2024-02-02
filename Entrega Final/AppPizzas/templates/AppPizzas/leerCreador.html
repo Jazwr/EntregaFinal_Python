@@ -1,0 +1,46 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta es la página de los creadores de pizzas 2024
+
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%for c in cread %}
+    <p>Nombre:{{c.nombre}}</p>
+    <p>Edad:{{c.edad}}</p>
+    <p>Correo:{{c.correo}}</p>
+    
+
+    <button>
+        <a href="{% url 'CreadorEditar' c.nombre %}"> Editar Creador </a>
+    </button>
+
+    <button>
+        <a href="{% url 'CreadorEliminar' c.nombre %}"> Eliminar Creador </a>
+    </button>
+    ##################################
+    {% endfor %}
+
+<br>
+<a href="{% url 'Creadores' %}"> Registrar nuevo concursante </a>
+
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "AppPizzas/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %}
+
+Esta es la página de los creadores de pizzas 2024
+
+{% endblock %}
+
+{% block content %}
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">¡regístrate aquí!</h1>
+                <!-- Icon Divider-->
+                
+
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <h2>Ingresa los siguientes datos: </h2>
+                <form action="{% url 'Creadores' %}" method="POST">{% csrf_token %}
+                    <table>
+                        {{nuevo_creador.as_p}}
+                    </table>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+        
+    </header>
+
+   {% endblock %}
